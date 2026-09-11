@@ -1,0 +1,25 @@
+# Node dependencies
+node_modules/
+
+# Local Expo and build caches
+.expo/
+dist/
+web-build/
+
+# Native Android build output & cache (Crucial!)
+android/.gradle/
+android/build/
+android/app/build/
+android/app/.cxx/
+android/app/build/outputs/
+
+# Native iOS build output & pods
+ios/Pods/
+ios/build/
+ios/DerivedData/
+
+# Binaries and archives
+*.apk
+*.aab
+*.zip
+*.tar.gz
