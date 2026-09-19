@@ -1,35 +1,35 @@
 {
   "cli": {
-    "version": ">= 10.0.0",
+    "version": ">= 15.0.12",
     "appVersionSource": "remote"
   },
   "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal",
-      "channel": "development",
-      "env": {
-        "EXPO_PUBLIC_SERVER_URI": "https://navoapi.viaspark.site/api/v1"
-      }
-    },
     "preview": {
+      "env": {
+        "EXPO_PUBLIC_GOOGLE_CLOUD_API_KEY": "AIzaSyC5czfnnu5JMoS26BaZp_wrsYInBXRm52c",
+        "EXPO_PUBLIC_SERVER_URI": "https://navoapi.viaspark.site/api/v1",
+        "EXPO_PUBLIC_IMAGE_URI": "https://navoapi.viaspark.site",
+        "EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_test_qX5TsEm3RfeB9BibKEKjQj9a",
+        "EXPO_PUBLIC_API_KEY": "ddd258405d810a03fc50372044f91ad62f6a16674dcace44e459f3036ae762dc"
+      },
       "distribution": "internal",
       "channel": "preview",
       "android": {
         "buildType": "apk"
-      },
-      "env": {
-        "EXPO_PUBLIC_SERVER_URI": "https://navoapi.viaspark.site/api/v1"
       }
     },
     "production": {
-      "channel": "production",
-      "autoIncrement": true,
-      "android": {
-        "buildType": "app-bundle"
-      },
       "env": {
-        "EXPO_PUBLIC_SERVER_URI": "https://navoapi.viaspark.site/api/v1"
+        "EXPO_PUBLIC_GOOGLE_CLOUD_API_KEY": "AIzaSyC5czfnnu5JMoS26BaZp_wrsYInBXRm52c",
+        "EXPO_PUBLIC_SERVER_URI": "https://navoapi.viaspark.site/api/v1",
+        "EXPO_PUBLIC_IMAGE_URI": "https://navoapi.viaspark.site",
+        "EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_test_qX5TsEm3RfeB9BibKEKjQj9a",
+        "EXPO_PUBLIC_API_KEY": "ddd258405d810a03fc50372044f91ad62f6a16674dcace44e459f3036ae762dc"
+      },
+      "autoIncrement": true,
+      "channel": "production",
+      "ios": {
+        "image": "latest"
       }
     }
   },

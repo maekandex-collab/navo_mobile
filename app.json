@@ -5,35 +5,43 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "navo",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#003366"
-    },
+    "scheme": "navoplus",
+    "deepLinking": true,
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.navoplus.app",
+      "bundleIdentifier": "com.loxfordnavoplus.navoPlus",
       "infoPlist": {
-        "NSCameraUsageDescription": "Navo Plus requires camera access for identity verification and document scanning.",
-        "NSPhotoLibraryUsageDescription": "Navo Plus requires photo library access to upload profile pictures and receipts."
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera.",
+        "NSMicrophoneUsageDescription": "$(PRODUCT_NAME) needs access to your Microphone.",
+        "NSPhotoLibraryUsageDescription": "$(PRODUCT_NAME) needs access to your Photos.",
+        "NSPhotoLibraryAddUsageDescription": "$(PRODUCT_NAME) needs to save photos.",
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to provide navigation assistance.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#003366"
+        "backgroundColor": "#ffffff"
       },
-      "package": "com.navoplus.app",
-      "versionCode": 1,
       "permissions": [
-        "android.permission.CAMERA",
         "android.permission.READ_EXTERNAL_STORAGE",
         "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.MEDIA_LIBRARY",
         "android.permission.USE_BIOMETRIC",
-        "android.permission.USE_FINGERPRINT"
-      ]
+        "android.permission.USE_FINGERPRINT",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_MEDIA_LOCATION",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO",
+        "android.permission.INTERNET"
+      ],
+      "package": "com.loxfordnavoplus.navoPlus"
     },
     "web": {
       "bundler": "metro",
@@ -42,32 +50,84 @@
     },
     "plugins": [
       "expo-router",
+      "expo-dev-client",
       [
-        "expo-font",
+        "expo-splash-screen",
         {
-          "fonts": [
-            "./assets/fonts/Aeonik-Black.ttf",
-            "./assets/fonts/Aeonik-Bold.ttf",
-            "./assets/fonts/Aeonik-Light.ttf",
-            "./assets/fonts/Aeonik-Medium.ttf",
-            "./assets/fonts/Aeonik-Regular.ttf",
-            "./assets/fonts/Aeonik-Thin.ttf",
-            "./assets/fonts/Raleway-Black.ttf",
-            "./assets/fonts/Raleway-ExtraLight.ttf"
-          ]
+          "image": "./assets/images/logo.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#003366"
+        }
+      ],
+      "expo-asset",
+      "expo-secure-store",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID."
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
+          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos."
+        }
+      ],
+      [
+        "expo-file-system",
+        {
+          "supportsOpeningDocumentsInPlace": true,
+          "enableFileSharing": true
         }
       ],
       [
         "react-native-vision-camera",
         {
-          "cameraPermissionText": "Navo Plus requires access to your camera for identity verification."
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera.",
+          "enableMicrophonePermission": true,
+          "microphonePermissionText": "$(PRODUCT_NAME) needs access to your Microphone."
         }
       ],
-      "expo-secure-store",
-      "expo-local-authentication"
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.0"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "20fcd3b1-1eb0-403d-96ca-ef9b9f9efa7f"
+      }
+    },
+    "owner": "maekandex"
   }
 }
