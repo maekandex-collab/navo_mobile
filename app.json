@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "Navo Plus",
+    "slug": "navoPlus",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "navo",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#003366"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.navoplus.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Navo Plus requires camera access for identity verification and document scanning.",
+        "NSPhotoLibraryUsageDescription": "Navo Plus requires photo library access to upload profile pictures and receipts."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#003366"
+      },
+      "package": "com.navoplus.app",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.USE_BIOMETRIC",
+        "android.permission.USE_FINGERPRINT"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Aeonik-Black.ttf",
+            "./assets/fonts/Aeonik-Bold.ttf",
+            "./assets/fonts/Aeonik-Light.ttf",
+            "./assets/fonts/Aeonik-Medium.ttf",
+            "./assets/fonts/Aeonik-Regular.ttf",
+            "./assets/fonts/Aeonik-Thin.ttf",
+            "./assets/fonts/Raleway-Black.ttf",
+            "./assets/fonts/Raleway-ExtraLight.ttf"
+          ]
+        }
+      ],
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "Navo Plus requires access to your camera for identity verification."
+        }
+      ],
+      "expo-secure-store",
+      "expo-local-authentication"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
